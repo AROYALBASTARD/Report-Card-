@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Trade Report Card / Journal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .section { margin-bottom: 30px; }
+        .export-btn { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Daily Trade Report Card / Journal</h1>
+        
+        <form id="tradeJournalForm">
+            <!-- What I Learned / Improved Upon Today -->
+            <div class="section">
+                <h3>WHAT I LEARNED / IMPROVED UPON TODAY:</h3>
+                <textarea class="form-control" id="learned" rows="4" placeholder="Write here"></textarea>
+            </div>
+            
+            <!-- Changes I Need to Make From Today -->
+            <div class="section">
+                <h3>CHANGES I NEED TO MAKE FROM TODAY:</h3>
+                <textarea class="form-control" id="changes" rows="4" placeholder="Write here"></textarea>
+            </div>
+            
+            <!-- Overview -->
+            <div class="section">
+                <h3>OVERVIEW:</h3>
+                <textarea class="form-control" id="overview" rows="6" placeholder="Write your daily summary here"></textarea>
+            </div>
+            
+            <!-- Easiest Trade / Best Setup of the Day -->
+            <div class="section">
+                <h3>EASIEST TRADE / BEST SETUP OF THE DAY:</h3>
+                <div class="mb-3">
+                    <label for="ticker" class="form-label">Ticker:</label>
+                    <input type="text" class="form-control" id="ticker" placeholder="[ ]">
+                </div>
+                <div class="mb-3">
+                    <label for="pnl" class="form-label">PnL:</label>
+                    <input type="text" class="form-control" id="pnl" placeholder="[ ]">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea class="form-control" id="description" rows="4" placeholder="Describe the trade, setup, thesis, execution, and outcome"></textarea>
+                </div>
+            </div>
+            
+            <!-- Date | Grade | $PnL -->
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="date" class="form-label">Date:</label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="grade" class="form-label">Grade:</label>
+                        <input type="text" class="form-control" id="grade" placeholder="[Grade]">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="totalPnl" class="form-label">$PnL:</label>
+                        <input type="text" class="form-control" id="totalPnl" placeholder="[$PnL]">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Goal -->
+            <div class="section">
+                <h3>*GOAL:*</h3>
+                <textarea class="form-control" id="goal" rows="2" placeholder="Your short-term trading goals here"></textarea>
+            </div>
+            
+            <!-- Rules -->
+            <div class="section">
+                <h3>Rules:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">3 Trades per Segment, stay selective.</li>
+                    <li class="list-group-item">No Risk Monitor/phone.</li>
+                    <li class="list-group-item">Each break must consciously fill out DRC, consciously reflect on goals.</li>
+                    <li class="list-group-item">Afterhours schedule.</li>
+                </ul>
+            </div>
+            
+            <!-- Segments Table -->
+            <div class="section">
+                <h3>Segments Table:</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Grade</th>
+                            <th>PTD Only</th>
+                            <th>Sizing</th>
+                            <th>In My Favor</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" placeholder="9:30-11" id="segment1"></td>
+                            <td><input type="text" class="form-control" id="grade1"></td>
+                            <td><input type="text" class="form-control" id="ptd1"></td>
+                            <td><input type="text" class="form-control" id="sizing1"></td>
+                            <td><input type="text" class="form-control" id="favor1"></td>
+                            <td><input type="text" class="form-control" id="comments1"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="segment2"></td>
+                            <td><input type="text" class="form-control" id="grade2"></td>
+                            <td><input type="text" class="form-control" id="ptd2"></td>
+                            <td><input type="text" class="form-control" id="sizing2"></td>
+                            <td><input type="text" class="form-control" id="favor2"></td>
+                            <td><input type="text" class="form-control" id="comments2"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="segment3"></td>
+                            <td><input type="text" class="form-control" id="grade3"></td>
+                            <td><input type="text" class="form-control" id="ptd3"></td>
+                            <td><input type="text" class="form-control" id="sizing3"></td>
+                            <td><input type="text" class="form-control" id="favor3"></td>
+                            <td><input type="text" class="form-control" id="comments3"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="form-control" id="segment4"></td>
+                            <td><input type="text" class="form-control" id="grade4"></td>
+                            <td><input type="text" class="form-control" id="ptd4"></td>
+                            <td><input type="text" class="form-control" id="sizing4"></td>
+                            <td><input type="text" class="form-control" id="favor4"></td>
+                            <td><input type="text" class="form-control" id="comments4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Export Button -->
+            <button type="button" class="btn btn-primary export-btn" onclick="exportJournal()">Export to JSON</button>
+        </form>
+    </div>
+
+    <script>
+        function exportJournal() {
+            const data = {
+                learned: document.getElementById('learned').value,
+                changes: document.getElementById('changes').value,
+                overview: document.getElementById('overview').value,
+                ticker: document.getElementById('ticker').value,
+                pnl: document.getElementById('pnl').value,
+                description: document.getElementById('description').value,
+                date: document.getElementById('date').value,
+                grade: document.getElementById('grade').value,
+                totalPnl: document.getElementById('totalPnl').value,
+                goal: document.getElementById('goal').value,
+                segments: [
+                    {
+                        segment: document.getElementById('segment1').value,
+                        grade: document.getElementById('grade1').value,
+                        ptd: document.getElementById('ptd1').value,
+                        sizing: document.getElementById('sizing1').value,
+                        favor: document.getElementById('favor1').value,
+                        comments: document.getElementById('comments1').value
+                    },
+                    {
+                        segment: document.getElementById('segment2').value,
+                        grade: document.getElementById('grade2').value,
+                        ptd: document.getElementById('ptd2').value,
+                        sizing: document.getElementById('sizing2').value,
+                        favor: document.getElementById('favor2').value,
+                        comments: document.getElementById('comments2').value
+                    },
+                    {
+                        segment: document.getElementById('segment3').value,
+                        grade: document.getElementById('grade3').value,
+                        ptd: document.getElementById('ptd3').value,
+                        sizing: document.getElementById('sizing3').value,
+                        favor: document.getElementById('favor3').value,
+                        comments: document.getElementById('comments3').value
+                    },
+                    {
+                        segment: document.getElementById('segment4').value,
+                        grade: document.getElementById('grade4').value,
+                        ptd: document.getElementById('ptd4').value,
+                        sizing: document.getElementById('sizing4').value,
+                        favor: document.getElementById('favor4').value,
+                        comments: document.getElementById('comments4').value
+                    }
+                ]
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `trade_journal_${data.date || 'untitled'}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
